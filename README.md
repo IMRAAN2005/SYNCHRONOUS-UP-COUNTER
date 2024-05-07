@@ -10,7 +10,9 @@ Quartus prime
 
 **THEORY**
 
+
 **4 bit synchronous UP Counter**
+
 
 If we enable each J-K flip-flop to toggle based on whether or not all preceding flip-flop outputs (Q) are “high,” we can obtain the same counting sequence as the asynchronous circuit without the ripple effect, since each flip-flop in this circuit will be clocked at exactly the same time:
 
@@ -25,6 +27,8 @@ Otherwise, the J and K inputs for that flip-flop will both be “low,” placing
 Since the first (LSB) flip-flop needs to toggle at every clock pulse, its J and K inputs are connected to Vcc or Vdd, where they will be “high” all the time.
 The next flip-flop need only “recognize” that the first flip-flop’s Q output is high to be made ready to toggle, so no AND gate is needed.
 However, the remaining flip-flops should be made ready to toggle only when all lower-order output bits are “high,” thus the need for AND gates.
+
+
 
 **Procedure**
 
@@ -43,9 +47,11 @@ However, the remaining flip-flops should be made ready to toggle only when all l
 
 **PROGRAM**
 
+
 Developed by:Abinaya A
 
 RegisterNumber:212223040003
+
 
 ```
 module ex11(out,clk,rstn);
@@ -60,16 +66,30 @@ begin
 end
 endmodule
 ```
+
+
 **RTL LOGIC UP COUNTER**
+
+
 ![de10](https://github.com/23002776/SYNCHRONOUS-UP-COUNTER/assets/145742657/66fc43d1-92e2-44d8-aa13-34c31b4f100a)
 
 
 **TIMING DIAGRAM FOR IP COUNTER**
+
+
 ![de11](https://github.com/23002776/SYNCHRONOUS-UP-COUNTER/assets/145742657/4e8c3b6a-4598-4ed3-b666-6ded1c19437a)
 
+
+
 **TRUTH TABLE**
+
+
 ![de12](https://github.com/23002776/SYNCHRONOUS-UP-COUNTER/assets/145742657/865fb0d4-c01e-48fa-9753-c277cc1e6f6a)
 
+
+
 **RESULTS**
+
+
 
 Hence a 4 bit synchronous up counter is implemented correctly
